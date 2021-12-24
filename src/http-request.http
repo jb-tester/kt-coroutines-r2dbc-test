@@ -1,0 +1,36 @@
+###
+POST http://localhost:8080/coroutines/create-one
+
+<> 2021-12-24T134254.500.json
+
+###
+POST http://localhost:8080/coroutines/create-two
+
+<> 2021-12-24T134459.500.json
+
+###
+GET http://localhost:8080/coroutines/find-top
+
+<> 2021-12-24T134911.200.json
+
+###
+GET http://localhost:8080/coroutines/find
+
+<> 2021-12-24T135010.200.json
+
+###
+GET http://localhost:8080/coroutines/find-flow
+
+<> 2021-12-24T135025.200.json
+
+###
+
+GET http://localhost:8080/coroutines/check-username
+
+###
+
+GET http://localhost:8080/coroutines/find-by-message
+
+###
+
+GET http://localhost:8080/coroutines/find-by-username
