@@ -2,6 +2,8 @@ package com.mytests.spring.coroutines.r2dbc.test
 
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.toList
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
@@ -49,5 +51,9 @@ class GreetingsCoroutinesService(private val fooRepository: GreetingsCoroutinesR
 
     suspend fun countMessagesWithExclamationPoint():Int{
         return fooRepository.countByMessageEndingWith("!")
+    }
+    // will return 0, since reactive-type parameters are not treated correctly with r2dbc
+    suspend fun countUsernamesWithSpecificSymbols(): Int {
+        return fooRepository.countByUsername(flowOf("Jane")).first()
     }
 }
