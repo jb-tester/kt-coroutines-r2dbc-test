@@ -34,3 +34,6 @@ GET http://localhost:8080/coroutines/find-by-message
 ###
 
 GET http://localhost:8080/coroutines/find-by-username
+
+###
+GET http://localhost:8080/coroutines/count-messages

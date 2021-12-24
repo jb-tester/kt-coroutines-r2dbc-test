@@ -45,5 +45,8 @@ class GreetingsCoroutinesController(private val service: GreetingsCoroutinesServ
     suspend fun findByUsername(): List<Greetings> {
         return service.findAllByUsername();
     }
-
+    @GetMapping("/count-messages")
+    suspend fun countExclamationMessages(): Int {
+        return service.countMessagesWithExclamationPoint();
+    }
 }

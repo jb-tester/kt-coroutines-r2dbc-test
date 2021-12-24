@@ -33,7 +33,7 @@ class GreetingsCoroutinesService(private val fooRepository: GreetingsCoroutinesR
     }
     
     suspend fun findSingleFooByMessage(): Greetings {
-        return fooRepository.findTopByMessage("hi!")
+        return fooRepository.findTopByMessage("hello!")
     }
 
     suspend fun doesExistsUser(): Boolean{
@@ -45,5 +45,9 @@ class GreetingsCoroutinesService(private val fooRepository: GreetingsCoroutinesR
     }
     suspend fun findAllByUsername(): List<Greetings>{
         return fooRepository.findByUsernameContains("Ja").toList();
+    }
+
+    suspend fun countMessagesWithExclamationPoint():Int{
+        return fooRepository.countByMessageEndingWith("!")
     }
 }
