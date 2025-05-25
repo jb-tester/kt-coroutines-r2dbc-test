@@ -8,18 +8,20 @@ import kotlinx.coroutines.flow.toList
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
+private const val STRING1 = "hi!"
+
 @Service
 class GreetingsCoroutinesService(private val fooRepository: GreetingsCoroutinesRepository) {
 
     @Transactional
     suspend fun createMessages() {
-        fooRepository.save(Greetings("hi!","John"))
-        fooRepository.save(Greetings("hi!","Marie"))
+        fooRepository.save(Greetings(STRING1,"John"))
+        fooRepository.save(Greetings(STRING1,"Marie"))
     }
 
     @Transactional
     suspend fun createMessage(): Greetings {
-        return fooRepository.save(Greetings("hi!","Rebecca"))
+        return fooRepository.save(Greetings(STRING1,"Rebecca"))
     }
 
     //@Transactional
